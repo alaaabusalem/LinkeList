@@ -10,31 +10,66 @@ namespace linked_list
 	{
 		public Node Head;
 		public Node Tail;
-		public int Counter { set; get; }	
+		public int Counter { set; get; }
 		public LinkedList() {
 
 			this.Head = null;
 			this.Tail = null;
-		}	
+		}
 
 		public void AddFirst(int data) {
 			Node newNode = new Node(data);
-		
-		if(Head==null && Tail == null)
+
+			if (Head == null && Tail == null)
 			{
 				Head = newNode;
 				Tail = newNode;
-			}	
+			}
 
-		else {
+			else {
 
 				newNode.Next = Head;
-				Head = newNode;	
+				Head = newNode;
 
 			}
 			Counter++;
-		
+
 		}
+
+		
+		public string PrintList()
+		{
+			string Data = "";
+			Node node = Head;
+			while (node != null)
+			{
+				Data += $"{node.Data} -> ";
+				node = node.Next;
+			}
+			Data += "Null";
+			return Data;
+
+		}
+
+		public bool Search(int value)
+		{
+
+			Node node = Head;
+			while (node != null)
+			{
+				if (node.Data == value) { return true; }
+				node = node.Next;
+			}
+
+			return false;
+
+		}
+
+		
+		///////////// CC6 
+	
+		
+		// add to the End of the list
 		public void AddLast(int data)
 		{
 			Node newNode = new Node(data);
@@ -48,39 +83,72 @@ namespace linked_list
 			else
 			{
 				Tail.Next = newNode;
-				Tail= newNode;	
+				Tail = newNode;
 
 			}
 			Counter++;
 
 		}
-		public string PrintList()
+
+		public void InsertBefore(int newvalue, int valuetosearch)
 		{
-			string Data = "";
-			Node node =Head;
-			while (node != null)
+			Node newNode = new Node(newvalue);
+
+			if (Head.Data == valuetosearch)
 			{
-				Data += $"{node.Data} -> ";
-				node= node.Next;	
+				newNode.Next = Head;
+				Head = newNode;
 			}
-			Data += "Null";
-			return Data;
+
+			else {
+				Node node = Head;
+				while (node != null)
+				{
+					if (node.Next.Data == valuetosearch) {
+
+						newNode.Next = node.Next;
+						node.Next = newNode;
+						break;
+						
+					}
+					node = node.Next;
+
+				}
+			}
 
 		}
 
-		public bool Search(int value)
+
+
+		public void InsertAfter(int newvalue, int valuetosearch)
 		{
-			
-			Node node = Head;
-			while (node != null)
+			Node newNode = new Node(newvalue);
+
+			if (Head.Data == valuetosearch)
 			{
-				if (node.Data == value) { return true; }
-				node = node.Next;
+				newNode.Next= Head.Next;
+				Head.Next = newNode;	
 			}
-			
-			return false;
+
+			else
+			{
+				Node node = Head.Next;
+				while (node != null)
+				{
+					if (node.Data == valuetosearch)
+					{
+
+						newNode.Next=node.Next;
+						node.Next = newNode;
+						break;
+						
+					}
+					node = node.Next;
+				}
+			}
 
 		}
+
 
 	}
-}
+	} 

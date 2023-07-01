@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stand By\\source\\repos\\alaaabusalem\\data-structures-and-algorithms\\linked-list\\linked-list\\linked-list.csproj",
+      "projectUniqueName": "C:\\Users\\Stand By\\source\\repos\\alaaabusalem\\LinkedList\\linked-list\\linked-list\\linked-list.csproj",
       "projectName": "linked-list",
-      "projectPath": "C:\\Users\\Stand By\\source\\repos\\alaaabusalem\\data-structures-and-algorithms\\linked-list\\linked-list\\linked-list.csproj",
+      "projectPath": "C:\\Users\\Stand By\\source\\repos\\alaaabusalem\\LinkedList\\linked-list\\linked-list\\linked-list.csproj",
       "packagesPath": "C:\\Users\\Stand By\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stand By\\source\\repos\\alaaabusalem\\data-structures-and-algorithms\\linked-list\\linked-list\\obj\\",
+      "outputPath": "C:\\Users\\Stand By\\source\\repos\\alaaabusalem\\LinkedList\\linked-list\\linked-list\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stand By\\AppData\\Roaming\\NuGet\\NuGet.Config",

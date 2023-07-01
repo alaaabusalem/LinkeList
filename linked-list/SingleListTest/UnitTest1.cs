@@ -24,12 +24,13 @@ namespace SingleListTest
 		{
 			// Arrange
 			LinkedList linkedList = new LinkedList();
-			linkedList.AddLast(1);
+			linkedList.AddFirst(1);
+			linkedList.AddFirst(2);
 
 			// Act
 			string data=linkedList.PrintList();
 			// Assert
-			Assert.Equal("1 -> Null", data);
+			Assert.Equal("2 -> 1 -> Null", data);
 		}
 
 		[Fact]
@@ -89,5 +90,54 @@ namespace SingleListTest
 			// Assert
 			Assert.Equal("3 -> 2 -> 1 -> Null", data);
 		}
+
+
+		//CC6
+
+
+		[Fact]
+		void TestAddLast()
+		{
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddLast(1);
+			linkedList.AddLast(2);
+
+			// Act
+			string data = linkedList.PrintList();
+			// Assert
+			Assert.Equal("1 -> 2 -> Null", data);
+		}
+
+		[Fact]
+		void TestInsertBefore()
+		{
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddLast(1);
+			linkedList.AddLast(2);
+			linkedList.InsertBefore(4, 2);
+
+			// Act
+			string data = linkedList.PrintList();
+			// Assert
+			Assert.Equal("1 -> 4 -> 2 -> Null", data);
+		}
+
+		[Fact]
+		void TestInsertAfter()
+		{
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddLast(1);
+			linkedList.AddLast(2);
+			linkedList.InsertAfter(5, 2);
+
+			// Act
+			string data = linkedList.PrintList();
+			// Assert
+			Assert.Equal("1 -> 2 -> 5 -> Null", data);
+		}
+
 	}
 }
