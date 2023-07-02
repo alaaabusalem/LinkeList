@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Numerics;
+using System.Xml.Linq;
 using linked_list;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -98,6 +100,8 @@ namespace SingleListTest
 		[Fact]
 		void TestAddLast()
 		{
+			// Can successfully add a node to the end of the linked list
+			//Can successfully add multiple nodes to the end of a linked list
 			// Arrange
 			LinkedList linkedList = new LinkedList();
 			linkedList.AddLast(1);
@@ -112,32 +116,44 @@ namespace SingleListTest
 		[Fact]
 		void TestInsertBefore()
 		{
+			// Can successfully insert a node before a node located i the middle of a linked list
+			//Can successfully insert a node before the first node of a linked list
+
 			// Arrange
 			LinkedList linkedList = new LinkedList();
 			linkedList.AddLast(1);
 			linkedList.AddLast(2);
 			linkedList.InsertBefore(4, 2);
+			linkedList.InsertBefore(5, 1);
 
 			// Act
 			string data = linkedList.PrintList();
 			// Assert
-			Assert.Equal("1 -> 4 -> 2 -> Null", data);
+			Assert.Equal("5 -> 1 -> 4 -> 2 -> Null", data);
 		}
 
 		[Fact]
 		void TestInsertAfter()
 		{
+			// Can successfully insert after a node in the middle of the linked list
+			//Can successfully insert a node after the last node of the linked list
+
 			// Arrange
 			LinkedList linkedList = new LinkedList();
 			linkedList.AddLast(1);
 			linkedList.AddLast(2);
-			linkedList.InsertAfter(5, 2);
+			linkedList.AddLast(3);
+			linkedList.InsertAfter(5, 3);
+			linkedList.InsertAfter(8, 5);
+			linkedList.InsertAfter(10, 8);
 
 			// Act
 			string data = linkedList.PrintList();
 			// Assert
-			Assert.Equal("1 -> 2 -> 5 -> Null", data);
+			Assert.Equal("1 -> 2 -> 3 -> 5 -> 8 -> 10 -> Null", data);
 		}
+
+	
 
 	}
 }
