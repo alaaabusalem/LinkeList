@@ -95,7 +95,9 @@ namespace SingleListTest
 
 
 		//CC6
-
+/// <summary>
+/// CC6
+/// </summary>
 
 		[Fact]
 		void TestAddLast()
@@ -153,7 +155,73 @@ namespace SingleListTest
 			Assert.Equal("1 -> 2 -> 3 -> 5 -> 8 -> 10 -> Null", data);
 		}
 
-	
+		// cc7
+
+		[Fact]
+		void TestkthFromEnd()
+		{
+			
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddFirst(1);
+			linkedList.AddFirst(2);
+			linkedList.AddFirst(3);
+			linkedList.AddFirst(4);
+
+			// Act
+			int data = linkedList.kthFromEnd(2);
+			// Assert
+			Assert.Equal(3, data);
+		}
+
+		[Fact]
+		void TestkthSizeOne()
+		{
+
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddFirst(1);
+			
+
+			// Act
+			int data = linkedList.kthFromEnd(0);
+			// Assert
+			Assert.Equal(1, data);
+		}
+		[Fact]
+		void TestkthFromEndKEqualLength()
+		{
+			
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddFirst(1);
+			linkedList.AddFirst(2);
+			linkedList.AddFirst(3);
+			linkedList.AddFirst(4);
+
+			// Act
+			int data = linkedList.kthFromEnd(3);
+			// Assert
+			Assert.Equal(4, data);
+		}
+
+		[Fact]	
+		void TestkthFromEndKLessThanZero()
+		{
+			
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddFirst(1);
+			linkedList.AddFirst(2);
+			linkedList.AddFirst(3);
+			linkedList.AddFirst(4);
+
+			// Act
+			int data = linkedList.kthFromEnd(-5);
+			// Assert
+			Assert.Equal(-1, data) ;
+			
+		}
 
 	}
 }

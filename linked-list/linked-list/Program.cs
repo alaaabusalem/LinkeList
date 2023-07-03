@@ -17,6 +17,15 @@
 			Console.WriteLine(List.Search(2));
 			Console.WriteLine(List.Search(4));
 
+			Console.WriteLine("test");
+			Console.WriteLine(List.kthFromEnd(0));//3
+			Console.WriteLine(List.kthFromEnd(1));//2
+			Console.WriteLine(List.kthFromEnd(2));//1
+
+			Console.WriteLine("test");
+
+
+
 			/// Doubly
 			Console.WriteLine("");
 			Console.WriteLine("Doubly");

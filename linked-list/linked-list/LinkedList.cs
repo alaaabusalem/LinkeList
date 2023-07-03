@@ -148,7 +148,26 @@ namespace linked_list
 			}
 
 		}
+		
+		//CC7
+		public int kthFromEnd(int index)
+		{
+
+			if (index >= Counter) { throw new Exception(); };
+			if (Head == null)
+			{
+				return -1;
+			}
+			if (index < 0) { return -1; }	
+		//	if (index == Counter - 1) { return Head.Data; }
+			Node node= Head;
+			for(int i=1; i<Counter-index; i++) { 
+			 node = node.Next;
+			
+			}
+			return node.Data;
+		}
 
 
 	}
-	} 
+} 
