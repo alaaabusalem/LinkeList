@@ -223,5 +223,22 @@ namespace SingleListTest
 			
 		}
 
+		[Fact]
+		void TestkthFromEndKBiggerThanLegth()
+		{
+
+			// Arrange
+			LinkedList linkedList = new LinkedList();
+			linkedList.AddFirst(1);
+			linkedList.AddFirst(2);
+			linkedList.AddFirst(3);
+			linkedList.AddFirst(4);
+
+			Assert.Throws<Exception>(() => {
+				linkedList.kthFromEnd(4);
+			});
+
+		}
+
 	}
 }
