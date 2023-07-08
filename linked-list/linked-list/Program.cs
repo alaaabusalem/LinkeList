@@ -41,7 +41,7 @@
 
 			/////////// CC6
 			///
-			Console.WriteLine("");
+			/*Console.WriteLine("");
 			Console.WriteLine("CC6 Singly");
 			Console.WriteLine("");
 			LinkedList List2 = new LinkedList();
@@ -56,8 +56,69 @@
 			Console.WriteLine(data2);
 			List2.InsertAfter(10, 2);
 			data2 = List2.PrintList();
-			Console.WriteLine(data2);
-		
+			Console.WriteLine(data2);*/
+
+
+			///// code challenge 8
+			LinkedList List1 = new LinkedList();
+			List1.AddLast(1);
+			List1.AddLast(3);
+			List1.AddLast(2);
+			LinkedList List2 = new LinkedList();
+			List2.AddLast(5);
+			List2.AddLast(9);
+			List2.AddLast(4);
+
+			LinkedList final = zipLists(List1, List2);
+			//final=List1.zipLists(List1, List2);
+			Console.WriteLine("CC8");	
+			string printFinal=final.PrintList();
+			Console.WriteLine(printFinal);
+		}
+
+		public static LinkedList zipLists(LinkedList list1, LinkedList list2)
+		{
+			LinkedList finalZip = new LinkedList();
+			int list1Length = list1.Counter;
+			int list2Length = list2.Counter;
+			int LoopLingth = 0;
+			if (list1Length > list2Length) { LoopLingth = list1Length; }
+			else { LoopLingth = list2Length; }
+			Node node1 = list1.Head;
+			Node node2 = list2.Head;
+
+			for (int i = 0; i < LoopLingth; i++)
+			{
+
+				if (list1Length != 0)
+				{
+					//Node newNode = new Node(node1.Data);
+					finalZip.AddLast(node1.Data);
+					list1Length--;
+					if (node1.Next != null)
+					{
+						node1 = node1.Next;
+					}
+				}
+
+
+				if (list2Length != 0)
+				{
+					//Node newNode = new Node(node2.Data);
+					//finalZip.Tail.Next = newNode;
+					//finalZip.Tail = newNode;
+					finalZip.AddLast(node2.Data);
+					list2Length--;
+					if (node2.Next != null)
+					{
+						node2 = node2.Next;
+					}
+
+				}
+
+			}
+
+			return finalZip;
 
 		}
 	}

@@ -240,5 +240,60 @@ namespace SingleListTest
 
 		}
 
+		//cc 8 test
+
+		[Fact]
+		void zipListsTwoListsLengthEqualTest()
+		{
+			// Arrange
+			LinkedList List1 = new LinkedList();
+			List1.AddLast(1);
+			List1.AddLast(3);
+			List1.AddLast(2);
+			LinkedList List2 = new LinkedList();
+			List2.AddLast(5);
+			List2.AddLast(9);
+			List2.AddLast(4);
+			// Act
+			LinkedList Final= Program.zipLists(List1,List2);
+			// Assert
+			Assert.Equal("1 -> 5 -> 3 -> 9 -> 2 -> 4 -> Null", Final.PrintList());
+		}
+
+		[Fact]
+		void zipListsFirstLengthIsBiggerTest()
+		{
+			// Arrange
+			LinkedList List1 = new LinkedList();
+			List1.AddLast(1);
+			List1.AddLast(3);
+			
+			LinkedList List2 = new LinkedList();
+			List2.AddLast(5);
+			List2.AddLast(9);
+			List2.AddLast(4);
+			// Act
+			LinkedList Final = Program.zipLists(List1, List2);
+			// Assert
+			Assert.Equal("1 -> 5 -> 3 -> 9 -> 4 -> Null", Final.PrintList());
+		}
+
+		[Fact]
+		void zipListsSecondLengthIsBiggerTest()
+		{
+			// Arrange
+			LinkedList List1 = new LinkedList();
+			List1.AddLast(1);
+			List1.AddLast(3);
+			List1.AddLast(2);
+			LinkedList List2 = new LinkedList();
+			List2.AddLast(5);
+			List2.AddLast(9);
+			
+			// Act
+			LinkedList Final = Program.zipLists(List1, List2);
+			// Assert
+			Assert.Equal("1 -> 5 -> 3 -> 9 -> 2 -> Null", Final.PrintList());
+		}
 	}
 }

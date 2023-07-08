@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace linked_list
 {
 	public class LinkedList
 	{
+		
+
 		public Node Head;
 		public Node Tail;
 		public int Counter { set; get; }
@@ -168,6 +171,52 @@ namespace linked_list
 			return node.Data;
 		}
 
+		/*public LinkedList zipLists(LinkedList list1, LinkedList list2)
+		{
+			LinkedList finalZip = new LinkedList();	
+			int list1Length = list1.Counter;
+			int list2Length = list2.Counter;
+			int LoopLingth = 0;
+			if(list1Length > list2Length) { LoopLingth = list1Length; }
+			else { LoopLingth = list2Length; }
+			Node node1 = list1.Head;
+			Node node2 = list2.Head;
 
+			for (int i = 0; i < LoopLingth; i++)
+			{
+
+				if (list1Length != 0)
+				{
+					//Node newNode = new Node(node1.Data);
+					finalZip.AddLast(node1.Data);
+					list1Length--;
+					if (node1.Next != null)
+					{
+						node1 = node1.Next;
+					}
+				}
+				
+
+				if (list2Length != 0)
+				{
+					//Node newNode = new Node(node2.Data);
+					//finalZip.Tail.Next = newNode;
+					//finalZip.Tail = newNode;
+					finalZip.AddLast(node2.Data);
+					list2Length--;
+					if (node2.Next != null)
+					{
+						node2 = node2.Next;
+					}
+
+				}
+
+			}
+
+			return finalZip;
+		
+		}*/
+	
+	
 	}
 } 
