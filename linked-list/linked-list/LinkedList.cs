@@ -43,6 +43,7 @@ namespace linked_list
 		public string PrintList()
 		{
 			string Data = "";
+			
 			Node node = Head;
 			while (node != null)
 			{
